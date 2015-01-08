@@ -19,12 +19,13 @@ public class Menu {
     public String active;
     
     public Menu(){
+      
         buttons.put("tournament", new Button("Tournament", "src/cup.png", 0, this));
-        buttons.put("user", new Button("Users", "src/user.png", 0, this));
+        buttons.put("users", new Button("Users", "src/user.png", 0, this));
         buttons.put("registration", new Button("Registration", "src/registration.png", 0, this));
-        buttons.put("option", new Button("Options", "src/options.png", 0, this));
-        buttons.put("k", new Button("a", "src/user.png", 0, this));
-        buttons.put("aas", new Button("aRegistration", "src/registration.png", 0, this));
+        buttons.put("options", new Button("Options", "src/options.png", 0, this));
+        buttons.put("a", new Button("a", "src/user.png", 0, this));
+        buttons.put("aregistration", new Button("aRegistration", "src/registration.png", 0, this));
     }
     
     public LinkedHashMap getElements(){
@@ -33,7 +34,7 @@ public class Menu {
     
     public void setActive(String key){
         
-        if(active != null) {
+        if(active != null && active != key) {
             Button prevActive = (Button) buttons.get(active.toLowerCase());
             prevActive.setActive(false);
         }
