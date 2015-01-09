@@ -14,15 +14,25 @@ import javax.swing.JFrame;
  */
 public class Frame extends JFrame {
     
-    public Frame(){
+    public Frame(int width, int height){
         super();
         
         setLayout(new BorderLayout());
         setVisible(true);        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1280,720);
+        setSize(width, height);
         setLocationRelativeTo(null);
         setVisible(true); 
+    }
+    
+    @Override
+    public int getWidth() {
+        return super.getWidth();
+    }
+    
+    @Override
+    public int getHeight() {
+        return super.getHeight();
     }
     
 }

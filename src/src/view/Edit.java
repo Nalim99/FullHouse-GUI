@@ -22,9 +22,10 @@ public class Edit extends JPanel {
     public Edit(Frame frame){
         menu = new Menu();
         layout = new Layout(frame);
-        layout.threeGrid(1920, 1080);
-      
+        layout.threeGrid();
+                
         addMenu();
+        menu.setActive("tournament");
     }
     
     private void addMenu() {
@@ -32,7 +33,7 @@ public class Edit extends JPanel {
         LinkedHashMap menuElements = menu.getElements();
         for(Object key : menuElements.keySet()) {
             Button button = (Button) menuElements.get(key);
-            layout.leftPanel.add(button);
+            layout.getLeft().add(button);
         }
         
     }

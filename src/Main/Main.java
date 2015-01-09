@@ -6,7 +6,6 @@
 package Main;
 
 import gui.Frame;
-import gui.Menu;
 
 /**
  *
@@ -14,16 +13,21 @@ import gui.Menu;
  */
 class Main {
     
-    Frame window = new Frame();
-    Menu menu = new Menu();
+    Frame window;
+   
+    private final static int WIDTH = 1280;
+    private final static int HEIGHT = 960;
     
     public Main() {
         
-        window = new Frame();
+        window = new Frame(WIDTH, HEIGHT);
+        
         app.view.tournament.Edit tournamentEdit = new app.view.tournament.Edit(window);
         
         window.add(tournamentEdit);
-    
+        
+        window.revalidate();
+        window.repaint();
     }
     
 }

@@ -19,15 +19,18 @@ public class Layout extends JPanel {
     
     Frame window;
     
-    public JPanel leftPanel = new JPanel();
-    public JPanel topPanel = new JPanel();
-    public JPanel centerPanel = new JPanel();
+    JPanel leftPanel = new JPanel();
+    JPanel topPanel = new JPanel();
+    JPanel centerPanel = new JPanel();
     
     public Layout(Frame window) {
         this.window = window;
     }
     
-    public void threeGrid(int width, int height){
+    public void threeGrid(){
+        
+        int width = window.getWidth();
+        int height = window.getHeight();
         
         window.setSize(width, height);
         window.setLayout(new BorderLayout());
@@ -43,6 +46,19 @@ public class Layout extends JPanel {
         window.add(topPanel, BorderLayout.NORTH);
         window.add(leftPanel, BorderLayout.WEST);
         window.add(centerPanel, BorderLayout.CENTER);
+       
+    }
+    
+    public JPanel getLeft(){
+        return leftPanel;
+    }
+    
+    public JPanel getTop() {
+        return topPanel;
+    }
+    
+    public JPanel getCenter() {
+        return centerPanel;
     }
     
 }
