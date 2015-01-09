@@ -5,57 +5,33 @@
  */
 package gui;
 
-import gui.element.Button;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import app.view.tournament.*;
 
 /**
  *
  * @author Jeffrey
  */
 class Main {
-    Frame test = new Frame();
-    Panel panelEen = new Panel();
-    Panel panelTwee = new Panel();
-    Panel panelDrie = new Panel();
+    Frame window = new Frame();
+    Edit tournamentEdit = new Edit();
     Menu menu = new Menu();
+    private Object Layout;
     
     public Main() {
-
-        Color menuColor = new Color(50, 62, 78);
         
-        JLabel panelNaam = new JLabel("Toernooi toevoegen...");
+//        tournamentEdit.addMenu(menu);
+        window.add(tournamentEdit);
         
-        panelTwee.setPreferredSize(new Dimension(300, 400));
-        panelEen.setPreferredSize(new Dimension(100, 400));
-        panelDrie.setPreferredSize(new Dimension(400, 24));
-      
-        panelEen.setBackground(menuColor);
-        panelDrie.setBackground(Color.LIGHT_GRAY);
+        window.setDefaultCloseOperation(Frame.EXIT_ON_CLOSE);
+//        window.setUndecorated(false);
+        window.setSize(1280, 960);
+        window.setVisible(true);
+        window.setLocationRelativeTo(null);
+        window.setResizable(true);
+//        window.add(Layout.threeGrid(1280, 960));
         
-        addButtons();
-       
-        test.add(panelDrie, BorderLayout.NORTH);
-        test.add(panelTwee, BorderLayout.CENTER);
-        test.add(panelEen, BorderLayout.WEST);
-        
-        test.revalidate();
-        test.repaint();
-    }
-    
-    private void addButtons() {
-        LinkedHashMap menuElements = menu.getElements();
-        for(Object key : menuElements.keySet()) {
-            Button button = (Button) menuElements.get(key);
-            panelEen.add(button);
-        }
-    
+        window.revalidate();
+        window.repaint();
     }
     
 }
