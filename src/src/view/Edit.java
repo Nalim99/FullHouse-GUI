@@ -5,10 +5,36 @@
  */
 package src.view;
 
+import gui.*;
+import gui.element.Button;
+import java.util.LinkedHashMap;
+import javax.swing.JPanel;
+
 /**
  *
  * @author milan
  */
-public interface Edit {
+public class Edit extends JPanel {
+    
+    Menu menu;
+    Layout layout;
+    
+    public Edit(Frame frame){
+        menu = new Menu();
+        layout = new Layout(frame);
+        layout.threeGrid(1920, 1080);
+      
+        addMenu();
+    }
+    
+    private void addMenu() {
+        
+        LinkedHashMap menuElements = menu.getElements();
+        for(Object key : menuElements.keySet()) {
+            Button button = (Button) menuElements.get(key);
+            layout.leftPanel.add(button);
+        }
+        
+    }
     
 }
