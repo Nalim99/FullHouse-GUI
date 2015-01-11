@@ -16,7 +16,6 @@ public class Edit extends src.view.Edit {
     public Edit(Frame window) {
         
         super(window);
-
     }
     
     

@@ -45,7 +45,7 @@ public class Layout extends JPanel {
         
         window.add(topPanel, BorderLayout.NORTH);
         window.add(leftPanel, BorderLayout.WEST);
-        window.add(centerPanel, BorderLayout.CENTER);
+        window.add(centerPanel, BorderLayout.EAST);
        
     }
     
