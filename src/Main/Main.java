@@ -26,8 +26,8 @@ class Main {
         
         window.add(tournamentEdit);
         
-        window.revalidate();
-        window.repaint();
+        //window.revalidate();
+        //window.repaint();
     }
     
 }

@@ -5,28 +5,30 @@
  */
 package app.view.tournament;
 
-import gui.Menu;
-import gui.element.Button;
-import java.util.LinkedHashMap;
-import javax.swing.*;
+import gui.Frame;
 
 /**
  *
  * @author milan
  */
-public class Overview extends JPanel implements src.view.Overview {
+public class Overview extends src.view.Overview {
    
-    public Overview() {
-        super();
+    public Overview(Frame frame) {
+        super(frame);
+        
+        menu.setActive("tournament");
+        
+        init();
+        render();
         
     }
     
-    public void addMenu(Menu menu){
-        LinkedHashMap menuElements = menu.getElements();
-        for(Object key : menuElements.keySet()) {
-            Button button = (Button) menuElements.get(key);
-            add(button);
-        }
+    private void init(){
+        
+    }
+    
+    private void render(){
+        
     }
     
 }

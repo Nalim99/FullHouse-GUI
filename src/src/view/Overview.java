@@ -5,14 +5,38 @@
  */
 package src.view;
 
+import gui.Frame;
+import gui.Layout;
+import gui.Menu;
+import gui.element.Button;
+import java.util.LinkedHashMap;
+import javax.swing.JPanel;
+
 /**
  *
  * @author milan
  */
-public interface Overview {
+public class Overview extends JPanel{
     
-    /*
-    * Over na denken
-    */
+    public Menu menu;
+    public Layout layout;
+    
+    public Overview(Frame frame){
+        menu = new Menu();
+        layout = new Layout(frame);
+        layout.threeGrid();
+                
+        addMenu();
+    }
+    
+    private void addMenu() {
+        
+        LinkedHashMap menuElements = menu.getElements();
+        for(Object key : menuElements.keySet()) {
+            Button button = (Button) menuElements.get(key);
+            layout.getLeft().add(button);
+        }
+        
+    }
    
 }
